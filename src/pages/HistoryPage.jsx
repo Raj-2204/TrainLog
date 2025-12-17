@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { getHistory, getSessionDetail, getExercisesCatalog } from "../api/history.js";
-
+import TopBar from "../components/TopBar.jsx";
 function groupByDate(sessions) {
   const map = new Map();
   for (const s of sessions) {
@@ -86,6 +86,7 @@ export default function HistoryPage() {
 
   return (
     <div>
+      <TopBar />
       <h2>History</h2>
 
       {err && <div style={styles.error}>{err}</div>}

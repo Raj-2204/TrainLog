@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchAuthSession } from "aws-amplify/auth";
 import { useNavigate } from "react-router-dom";
 import { completeSession } from "../api/sessions.js";
-
+import TopBar from "../components/TopBar.jsx";
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 // ---------- helpers ----------
@@ -196,6 +196,7 @@ export default function WorkoutPage() {
 
   return (
     <div>
+      <TopBar />
       <h2>Workout</h2>
 
       {!sessionId && (

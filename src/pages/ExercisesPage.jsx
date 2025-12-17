@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { getExercises } from "../api/exercises.js";
+import TopBar from "../components/TopBar.jsx";
 
 export default function ExercisesPage() {
   const [items, setItems] = useState([]);
@@ -38,6 +39,7 @@ export default function ExercisesPage() {
 
   return (
     <div>
+      <TopBar />
       <h2>Exercises</h2>
 
       {err && <div style={styles.error}>{err}</div>}

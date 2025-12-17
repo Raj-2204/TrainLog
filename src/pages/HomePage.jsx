@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { getHomeStats } from "../api/home.js";
-
+import TopBar from "../components/TopBar.jsx";
 function startOfWeekLocal(d = new Date()) {
   // Monday as start of week
   const date = new Date(d);
@@ -122,6 +122,7 @@ export default function HomePage() {
 
   return (
     <div>
+      <TopBar />
       <h2>Home</h2>
 
       {err && <div style={styles.error}>{err}</div>}
